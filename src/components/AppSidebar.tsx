@@ -26,6 +26,22 @@ import {
   useSidebar,
 } from "./ui/sidebar";
 
+function FlockWatchLogo({ className }: { className?: string }) {
+  return (
+    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+      <rect width="32" height="32" rx="8" fill="#0a0a0a"/>
+      <rect x="4" y="10" width="18" height="12" rx="2" fill="#ef4444"/>
+      <circle cx="13" cy="16" r="4" fill="#0a0a0a"/>
+      <circle cx="13" cy="16" r="2.5" fill="#1a1a1a"/>
+      <circle cx="13" cy="16" r="1" fill="#ef4444"/>
+      <circle cx="11.5" cy="14.5" r="0.6" fill="white" opacity="0.6"/>
+      <rect x="22" y="13" width="6" height="3" rx="1" fill="#ef4444"/>
+      <rect x="26" y="11" width="2" height="10" rx="1" fill="#666"/>
+      <rect x="6" y="12" width="3" height="2" rx="0.5" fill="#0a0a0a" opacity="0.5"/>
+    </svg>
+  );
+}
+
 const navItems = [
   { href: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
   { href: "/map", label: "Map", icon: Map },
@@ -156,12 +172,7 @@ function SidebarHeaderContent() {
         onClick={() => setOpenMobile(false)}
         className="flex items-center gap-2.5 px-2 py-1 font-semibold text-lg"
       >
-        <div className="size-8 rounded-lg bg-primary flex items-center justify-center">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="text-primary-foreground">
-            <circle cx="12" cy="12" r="3" />
-            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2" />
-          </svg>
-        </div>
+        <FlockWatchLogo />
         <span>{APP_NAME}</span>
       </Link>
     </SidebarHeader>
